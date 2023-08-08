@@ -30,13 +30,13 @@ def logout():
     session.pop('username', None)  # Remove the 'username' from the session
     return redirect(url_for('login_page'))
 
-@app.route('/')
-def index():
-    if 'username' in session:
-       return render_template('index.html')
-    else:
-        flash('Please log in to add tasks', 'error')
-        return redirect(url_for('login_page'))
+#@app.route('/')
+#def index():
+#    if 'username' in session:
+#       return render_template('index.html')
+#    else:
+#        flash('Please log in to add tasks', 'error')
+#        return redirect(url_for('login_page'))
 
 
 @app.route('/login', methods=['POST'])
